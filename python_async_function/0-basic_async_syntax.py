@@ -11,7 +11,7 @@ import asyncio
 import random
 
 
-async def wait_random(max_delay=10):
+async def wait_random(max_delay: int=10) -> float:
     """Returns random delay in seconds"""
 
     delay = random.uniform(0, max_delay)
@@ -20,6 +20,6 @@ async def wait_random(max_delay=10):
 
 
 # Tests
-# print(asyncio.run(wait_random()))
-# print(asyncio.run(wait_random(5)))
-# print(asyncio.run(wait_random(15)))
+print(asyncio.run(wait_random()))
+print(asyncio.run(wait_random(5)))
+print(asyncio.run(wait_random(15)))
