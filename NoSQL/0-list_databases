@@ -1,1 +1,2 @@
+// Script that lists all databases
 client.list_database_names()
