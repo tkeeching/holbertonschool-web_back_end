@@ -1,2 +1,2 @@
 // Script that lists all databases
-list_database_names()
+show dbs
