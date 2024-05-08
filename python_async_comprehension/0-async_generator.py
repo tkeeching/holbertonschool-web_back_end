@@ -6,10 +6,10 @@ Async generator
 
 import asyncio
 import random
-from typing import AsyncGenerator
+from typing import Generator
 
 
-async def async_generator() -> AsyncGenerator:
+async def async_generator() -> Generator:
     """Return random number between 0 and 10"""
 
     for _ in range(10):
