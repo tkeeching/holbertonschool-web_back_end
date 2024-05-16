@@ -19,11 +19,11 @@ def nginx_stats(mongo_collection):
 
     print("{} logs".format(document_count))
     print("Methods:")
-    print("{} method GET: {}".format("\t", method_get_count))
-    print("{} method POST: {}".format("\t", method_post_count))
-    print("{} method PUT: {}".format("\t", method_put_count))
-    print("{} method PATCH: {}".format("\t", method_patch_count))
-    print("{} method DELETE: {}".format("\t", method_delete_count))
+    print("{}method GET: {}".format("\t", method_get_count))
+    print("{}method POST: {}".format("\t", method_post_count))
+    print("{}method PUT: {}".format("\t", method_put_count))
+    print("{}method PATCH: {}".format("\t", method_patch_count))
+    print("{}method DELETE: {}".format("\t", method_delete_count))
     print("{} status check".format(status_path_count))
 
 
