@@ -27,6 +27,9 @@ def nginx_stats(mongo_collection):
     print("{} status check".format(status_path_count))
 
 
+if __name__ == "__main__":
+    nginx_stats(db.nginx)
+
 # Tests
 # if __name__ == "__main__":
 #     client = MongoClient('mongodb://127.0.0.1:27017')
