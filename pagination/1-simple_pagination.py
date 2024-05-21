@@ -50,20 +50,17 @@ class Server:
         page: int = 1,
         page_size: int = 10) -> Union[List[List],
                                       Exception]:
+        
+        assert isinstance(page, int) and page > 0
+        assert isinstance(page_size, int) and page_size > 0
+        
+        result = index_range(page, page_size)
+        dataset_size = len(self.dataset())
 
-        try:
-            assert isinstance(page, int) and page > 0
-            assert isinstance(page_size, int) and page_size > 0
-            
-            result = index_range(page, page_size)
-            dataset_size = len(self.dataset())
-
-            if (result[1] > dataset_size):
-                return []
-            else:
-                return self.dataset()[result[0]:result[1]]
-        except TypeError:
-            return AssertionError
+        if (result[1] > dataset_size):
+            return []
+        else:
+            return self.dataset()[result[0]:result[1]]
 
 
 # Tests
