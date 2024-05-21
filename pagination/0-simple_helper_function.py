@@ -11,10 +11,10 @@ in a list for those particular pagination parameters
 Page numbers are 1-indexed. ie. the first page is page 1
 """
 
-from typing import List
+from typing import Tuple
 
 
-def index_range(page: int, page_size: int) -> List[int]:
+def index_range(page: int, page_size: int) -> Tuple[int]:
     """
     Returns a tuple of size two
     """
