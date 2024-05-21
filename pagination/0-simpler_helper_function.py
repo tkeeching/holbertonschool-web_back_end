@@ -14,6 +14,9 @@ Page numbers are 1-indexed. ie. the first page is page 1
 from typing import List
 
 def index_range(page: int, page_size: int) -> List[int]:
+    """
+    Returns a tuple of size two
+    """
     return (page, page + page_size)
 
 
