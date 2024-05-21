@@ -64,7 +64,7 @@ class Server:
 
 
 # Tests
-server = Server()
+# server = Server()
 
 # try:
 #     should_err = server.get_page(-10, 2)
