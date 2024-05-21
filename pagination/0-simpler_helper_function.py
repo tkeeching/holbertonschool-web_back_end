@@ -18,7 +18,11 @@ def index_range(page: int, page_size: int) -> List[int]:
     """
     Returns a tuple of size two
     """
-    return (page, page + page_size)
+
+    start_index = page - 1
+    end_index = start_index + page_size
+
+    return (start_index, end_index)
 
 
 # Tests
