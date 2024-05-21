@@ -12,10 +12,10 @@ Page numbers are 1-indexed. ie. the first page is page 1
 """
 
 import csv
-from typing import List, Union
+from typing import Tuple, List
 
 
-def index_range(page: int, page_size: int) -> List[int]:
+def index_range(page: int, page_size: int) -> Tuple[int]:
     """
     Returns a tuple of size two
     """
@@ -48,23 +48,23 @@ class Server:
     def get_page(
         self,
         page: int = 1,
-        page_size: int = 10) -> Union[List[List],
-                                      Exception]:
-        
+        page_size: int = 10
+    ) -> List[List]:
+
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
-        
-        result = index_range(page, page_size)
+
+        start_index, end_index = index_range(page, page_size)
         dataset_size = len(self.dataset())
 
-        if (result[1] > dataset_size):
+        if (end_index > dataset_size):
             return []
         else:
-            return self.dataset()[result[0]:result[1]]
+            return self.dataset()[start_index:end_index]
 
 
 # Tests
-# server = Server()
+server = Server()
 
 # try:
 #     should_err = server.get_page(-10, 2)
