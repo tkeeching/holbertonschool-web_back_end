@@ -12,7 +12,6 @@ Page numbers are 1-indexed. ie. the first page is page 1
 """
 
 import csv
-import math
 from typing import List, Union
 
 
@@ -53,6 +52,9 @@ class Server:
                                       Exception]:
 
         try:
+            assert isinstance(page, int) and page > 0
+            assert isinstance(page_size, int) and page_size > 0
+            
             result = index_range(page, page_size)
             dataset_size = len(self.dataset())
 
@@ -65,22 +67,22 @@ class Server:
 
 
 # Tests
-# server = Server()
+server = Server()
 
-# try:
-#     should_err = server.get_page(-10, 2)
-# except AssertionError:
-#     print("AssertionError raised with negative values")
+try:
+    should_err = server.get_page(-10, 2)
+except AssertionError:
+    print("AssertionError raised with negative values")
 
-# try:
-#     should_err = server.get_page(0, 0)
-# except AssertionError:
-#     print("AssertionError raised with 0")
+try:
+    should_err = server.get_page(0, 0)
+except AssertionError:
+    print("AssertionError raised with 0")
 
-# try:
-#     should_err = server.get_page(2, 'Bob')
-# except AssertionError:
-#     print("AssertionError raised when page and/or page_size are not ints")
+try:
+    should_err = server.get_page(2, 'Bob')
+except AssertionError:
+    print("AssertionError raised when page and/or page_size are not ints")
 
 
 # print(server.get_page(1, 3))
