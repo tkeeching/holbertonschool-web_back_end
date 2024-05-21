@@ -59,8 +59,7 @@ class Server:
 
         if (end_index > dataset_size):
             return []
-        else:
-            return self.dataset()[start_index:end_index]
+        return self.dataset()[start_index:end_index]
 
 
 # Tests
