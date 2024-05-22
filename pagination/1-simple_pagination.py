@@ -20,8 +20,8 @@ def index_range(page: int, page_size: int) -> Tuple[int]:
     Returns a tuple of size two
     """
 
-    start_index = page - 1
-    end_index = start_index + page_size
+    start_index = (page - 1) * page_size
+    end_index = page * page_size
 
     return (start_index, end_index)
 
@@ -63,7 +63,7 @@ class Server:
 
 
 # Tests
-# server = Server()
+server = Server()
 
 # try:
 #     should_err = server.get_page(-10, 2)
