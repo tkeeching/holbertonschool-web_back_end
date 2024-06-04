@@ -7,6 +7,9 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
+    """
+    BasicCache module
+    """
     def put(self, key, item):
         """
         - Must assign to the dictionary 'self.cache_data' the 'item'
